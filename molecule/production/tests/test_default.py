@@ -16,7 +16,7 @@ def test_hosts_file(host):
 
 
 @pytest.mark.parametrize("name", [
-    'shadow-utils', 'util-linux', 'net-tools', 
+    'shadow-utils', 'util-linux', 'net-tools',
     'initscripts', 'sudo', 'git', 'unzip', 'java-1.8.0-openjdk.x86_64'
     ])
 def test_packages(host, name):
