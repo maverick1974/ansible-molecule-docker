@@ -1,0 +1,22 @@
+- name: get all variables
+  hosts: localhost
+  tasks:
+    - name: get the username running the deploy
+      local_action: command whoami
+      register: username_on_the_host
+
+- name: Bring up docker containers for docker connection inventory iface
+  hosts: localhost
+  environment:
+    PYTHONPATH: "{{ lookup('env','PYTHONPATH') }}:/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages"
+    PATH: "{{ lookup('env','PATH') }}:/Users/{{ username_on_the_host }}/Library/Group Containers/group.com.docker/bin"
+  roles:
+    - role: chrismeyersfsu.provision_docker
+      provision_docker_privileged: true,
+      provision_docker_inventory_group: "{{ groups['robots'] }}"
+      provision_docker_use_docker_connection: true
+
+- name: Common Test
+  hosts: docker_containers
+  roles:
+    - { role: common }

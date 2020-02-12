@@ -1,0 +1,7 @@
+---
+# vars file for common
+
+aws_ssh_user: "ec2-user"
+
+var_files:
+  - "./ssh_keys.yml"

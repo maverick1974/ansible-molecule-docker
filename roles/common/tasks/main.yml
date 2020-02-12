@@ -1,0 +1,14 @@
+---
+# tasks file for common
+# include all variables
+- name: Include all .yml in vars/ and all nested directories
+  include_vars:
+    dir: 'vars/'
+    extensions:
+      - yml
+
+# include all packages
+- include_tasks: packages.yml
+
+# Manage users
+- include_tasks: users.yml

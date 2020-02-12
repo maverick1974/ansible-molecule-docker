@@ -1,0 +1,14 @@
+# manage required packages
+- name: install required base packages
+  yum:
+    name: ['shadow-utils', 'util-linux', 'net-tools', 'initscripts', 'sudo', 'git', 'unzip']
+    update_cache: yes
+    state: present
+
+# - name: Make Java available for system
+#   alternatives:
+#     name="{{ item.exe }}"
+#     link="/usr/bin/{{ item.exe }}"
+#     path="{{ item.path }}/{{ item.exe }}"
+#   with_items:
+#     - { path: "{{ java_home }}/bin", exe: 'java' }

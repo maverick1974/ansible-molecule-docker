@@ -1,0 +1,4 @@
+---
+# defaults file for common
+nexus_default_url: "nexus.hw1.thinkingcapital.ca"
+java_home: "/usr/lib/jvm/jre-1.8.0-openjdk"
