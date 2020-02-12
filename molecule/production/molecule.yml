@@ -6,7 +6,7 @@
   lint:
     name: yamllint
     options:
-      config-file: ../.yamllint
+      config-file: ./molecule/default/.yamllint
   platforms:
     - name: instance
       image: "geerlingguy/docker-amazonlinux2-ansible:latest"

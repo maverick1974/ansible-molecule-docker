@@ -14,12 +14,15 @@ def test_hosts_file(host):
     assert f.user == 'root'
     assert f.group == 'root'
 
+
 @pytest.mark.parametrize("name", [
-    'shadow-utils', 'util-linux', 'net-tools', 'initscripts', 'sudo', 'git', 'unzip', 'java-1.8.0-openjdk.x86_64'
+    'shadow-utils', 'util-linux', 'net-tools', 
+    'initscripts', 'sudo', 'git', 'unzip', 'java-1.8.0-openjdk.x86_64'
     ])
 def test_packages(host, name):
     pkg = host.package(name)
     assert pkg.is_installed
+
 
 def test_tomcat_service(host):
     service = host.service("tomcat")
