@@ -34,6 +34,4 @@ BSD
 
 Author Information
 ------------------
-
-Saqib Khalil Yawar
-DevOps Team
+DevOpsProblemSolver 
