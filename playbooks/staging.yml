@@ -1,3 +1,5 @@
+---
+
 - name: Deploy Tomcat on server
   hosts: tomcat
   become: yes

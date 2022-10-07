@@ -1,3 +1,5 @@
+---
+
 - name: Deploy Tomcat on server
   hosts: tomcat
   remote_user: ec2-user 
